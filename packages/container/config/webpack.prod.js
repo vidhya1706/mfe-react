@@ -12,13 +12,13 @@ const prodConfig = {
     publicPath: "/container/latest/",
   },
   plugins: [
-    // new ModuleFederationPlugin({
-    //   name: "container",
-    //   remotes: {
-    //     marketing: `marketing@${domain}/marketing/remoteEntry.js`,
-    //   },
-    //   shared: packageJson.dependencies,
-    // }),
+    new ModuleFederationPlugin({
+      name: "container",
+      remotes: {
+        marketing: `marketing@${domain}/marketing/latest/remoteEntry.js`,
+      },
+      shared: packageJson.dependencies,
+    }),
   ],
 };
 
